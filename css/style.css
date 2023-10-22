@@ -395,50 +395,105 @@ body {
   font-size: 1rem;
 }
 
-/* Contact Section */
-.contact .row {
-  display: flex;
-  margin-top: 2rem;
-  background-color: #2b2929;
-}
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
 
-.contact .row .map {
-  flex: 1 1 45rem;
+.contact .email-form {
   width: 100%;
-  object-fit: cover;
+  border-top: 3px solid #ff8aa8;
+  border-bottom: 3px solid #ff8aa8;
+  padding: 30px;
+  background-color: eee;
 }
 
-.contact .row form {
-  flex: 1 1 45rem;
-  padding: 5rem 2rem;
+.contact .email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .email-form .error-message {
+  display: none;
+  color: eee;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact .email-form .sent-message {
+  display: none;
+  color: eee;
+  background: #ff8aa8;
   text-align: center;
+  padding: 15px;
+  font-weight: 600;
 }
 
-.contact .row form .input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: var(--bg);
-  border: 1px solid #eee;
-  padding-left: 2rem;
+.contact .email-form .loading {
+  display: none;
+  background: eee;
+  text-align: center;
+  padding: 15px;
 }
 
-.contact .row form .input-group input {
-  width: 100%;
-  padding: 2rem;
-  font-size: 1.7rem;
-  background: none;
-  color: #000000;
-}
-
-.contact .row form .btn {
-  margin-top: 3rem;
+.contact .email-form .loading:before {
+  content: "";
   display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.7rem;
-  color: #000000;
-  background-color: var(--primary);
-  cursor: pointer;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #ff8aa8;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .email-form input,
+.contact .email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.contact .email-form input:focus,
+.contact .email-form textarea:focus {
+  border-color: #ff8aa8;
+}
+
+.contact .email-form input {
+  height: 44px;
+}
+
+.contact .email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .email-form button[type=submit] {
+  background: #ff8aa8;
+  border: 0;
+  padding: 10px 24px;
+  color: eee;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .email-form button[type=submit]:hover {
+  background: #206bfb;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Footer */
